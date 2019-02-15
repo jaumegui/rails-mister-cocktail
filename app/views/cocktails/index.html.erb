@@ -1,31 +1,21 @@
 <div>
-  <div class="navbar-wagon">
-  <!-- Right Navigation -->
-      <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-        <a href="" class="navbar-wagon-item navbar-wagon-link">Mister Cocktails</a>
-      <!-- Dropdown appearing on mobile only -->
-      <div class="navbar-wagon-item hidden-md hidden-lg">
-        <div class="dropdown">
-          <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="home-banner">
   <div class="container">
     <div class="row">
       <% @cocktails.each do |cocktail| %>
         <div class="col-xs-12 col-sm-4">
-          <div class="card">
-            <div class="card-description">
-              <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+          <%= link_to cocktail_path(cocktail) do %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.7)), url('https://www.thespruceeats.com/thmb/S9QS-a0peub0W6cMtdSH7oBoVnI=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tequila-sunrise-recipe-760754-19_preview-5b02f856119fa80037651942.jpeg');">
+              <div class="card-description">
+                <h2><%= cocktail.name %></h2>
+              </div>
             </div>
-          </div>
+          <% end %>
         </div>
       <% end %>
     </div>
   </div>
   </div>
 </div>
+
+        
