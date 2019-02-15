@@ -13,7 +13,11 @@
 	</div>
 	<div class="right">
 		<%= link_to "Add A Ingredient", new_cocktail_dose_path(@cocktail.id) %>
+		<div class="cocktail-photo" style="border-radius: 50%;">
+			<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+		</div>
 	</div>
+			   
 </div>
 
 
