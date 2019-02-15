@@ -1,9 +1,36 @@
-<div class="banner">
-  <h1>All The Cocktails</h1>
+<div>
+  <div class="navbar-wagon">
+  <!-- Right Navigation -->
+      <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-  <% @cocktails.each do |cocktail| %>
-    <ul>
-      <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-    </ul>
-  <% end %>
+        <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
+      <!-- Dropdown appearing on mobile only -->
+      <div class="navbar-wagon-item hidden-md hidden-lg">
+        <div class="dropdown">
+          <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><a href="#">Host</a></li>
+            <li><a href="#">Trips</a></li>
+            <li><a href="#">Messagese</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-banner">
+  <div class="container">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
+            <div class="card-description">
+              <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  </div>
 </div>
